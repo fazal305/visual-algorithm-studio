@@ -6,7 +6,5 @@ This project turns core computer science concepts into visual step-by-step anima
 
 ## Live Demo
 
-Add your GitHub Pages link here after deployment:
-
 ```txt
 https://fazal305.github.io/visual-algorithm-studio/
