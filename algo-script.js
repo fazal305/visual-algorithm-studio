@@ -83,7 +83,7 @@ const ALGORITHM_INFO = {
     name: "Bubble Sort",
     title: "Bubble Sort Recorder",
     subtitle: "Compare nearby values, swap when needed, and watch the largest values move right.",
-    time: "Time: O(n²)",
+    time: "Time: O(n^2)",
     space: "Space: O(1)",
     description: "Bubble Sort compares nearby values. Bigger values slowly move right, like bubbles rising to the top."
   },
@@ -91,7 +91,7 @@ const ALGORITHM_INFO = {
     name: "Selection Sort",
     title: "Selection Sort Scanner",
     subtitle: "Scan the unsorted area, find the smallest value, then place it in the correct position.",
-    time: "Time: O(n²)",
+    time: "Time: O(n^2)",
     space: "Space: O(1)",
     description: "Selection Sort repeatedly searches for the smallest value. It then swaps that value into the next sorted position."
   },
@@ -99,7 +99,7 @@ const ALGORITHM_INFO = {
     name: "Insertion Sort",
     title: "Insertion Sort Builder",
     subtitle: "Take one value at a time and insert it into the already sorted left side.",
-    time: "Time: O(n²)",
+    time: "Time: O(n^2)",
     space: "Space: O(1)",
     description: "Insertion Sort builds a sorted section from left to right. Each new value shifts bigger values until it fits."
   },
@@ -1093,7 +1093,7 @@ function drawQueue(step) {
   }
 
   drawQueuePointer("front", step.front, startX, boxY, boxSize, gap, COLORS.gridStart, -55);
-  drawQueuePointer("rear", step.rear, startX, boxY, boxSize, gap, COLORS.purple, 145);
+  drawQueuePointer("rear", step.rear, startX, boxY, boxSize, gap, COLORS.minimum, 145);
 }
 
 /* Draws a queue pointer label. */
@@ -1179,7 +1179,7 @@ function drawLinkedList(step) {
     ctx.fillStyle = COLORS.muted;
     ctx.font = "700 24px JetBrains Mono";
     ctx.textAlign = "center";
-    ctx.fillText("HEAD → null", CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
+    ctx.fillText("HEAD -> null", CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
     return;
   }
 

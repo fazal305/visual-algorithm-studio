@@ -1,127 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A Canvas-based visual algorithm studio with sorting, stack, queue, linked list, binary tree, and BFS pathfinding demos."
+    />
+
     <title>Visual Algorithm Studio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
-        rel="stylesheet" />
-
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="algo-styles.css" />
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="app-shell">
-        <aside class="sidebar">
-            <div class="brand">
-                <span class="brand-mark">VAS</span>
-                <div>
-                    <h1>Visual Algorithm Studio</h1>
-                    <p>Canvas DSA Lab</p>
-                </div>
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">VAS</span>
+          <div>
+            <h1>Visual Algorithm Studio</h1>
+            <p>Canvas DSA Lab</p>
+          </div>
+        </div>
+
+        <nav class="category-list" aria-label="Algorithm categories">
+          <button class="category-btn" type="button" data-category="SORTING">
+            SORTING
+          </button>
+          <button class="category-btn" type="button" data-category="QUEUE">
+            QUEUE
+          </button>
+          <button class="category-btn" type="button" data-category="STACK">
+            STACK
+          </button>
+          <button
+            class="category-btn"
+            type="button"
+            data-category="LINKED_LIST"
+          >
+            LINKED LIST
+          </button>
+          <button
+            class="category-btn"
+            type="button"
+            data-category="BINARY_TREE"
+          >
+            BINARY TREE
+          </button>
+          <button
+            class="category-btn"
+            type="button"
+            data-category="PATHFINDING"
+          >
+            PATHFINDING
+          </button>
+        </nav>
+
+        <div
+          class="algorithm-pills"
+          id="algorithmPills"
+          aria-label="Algorithms"
+        ></div>
+      </aside>
+
+      <main class="main-area">
+        <section class="hero-panel">
+          <div>
+            <p class="eyebrow">Step-Based Algorithm Visualizer</p>
+            <h2 id="algorithmTitle">Bubble Sort Recorder</h2>
+            <p id="algorithmSubtitle">
+              Compare nearby values, swap when needed, and watch the largest
+              values move right.
+            </p>
+          </div>
+
+          <div class="step-counter" id="stepCounter">Step 00 / 00</div>
+        </section>
+
+        <section class="studio-grid">
+          <div class="canvas-card">
+            <canvas id="algorithmCanvas" width="900" height="440">
+              Your browser does not support Canvas.
+            </canvas>
+
+            <div class="control-bar">
+              <button id="playBtn" class="control-btn" type="button">
+                Play
+              </button>
+              <button id="pauseBtn" class="control-btn" type="button">
+                Pause
+              </button>
+              <button id="stepBackBtn" class="control-btn" type="button">
+                Back
+              </button>
+              <button id="stepForwardBtn" class="control-btn" type="button">
+                Next
+              </button>
+              <button id="resetBtn" class="control-btn danger" type="button">
+                Reset
+              </button>
+
+              <label class="speed-control">
+                Speed
+                <select id="speedSelect">
+                  <option value="slow">Slow</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="fast">Fast</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <aside class="info-column">
+            <div class="info-card">
+              <h3>Algorithm Info</h3>
+
+              <div class="info-row">
+                <span>Name</span>
+                <strong id="infoName">Bubble Sort</strong>
+              </div>
+
+              <div class="badge-row">
+                <span class="complexity-badge time" id="timeComplexity"
+                  >Time: O(n^2)</span
+                >
+                <span class="complexity-badge space" id="spaceComplexity"
+                  >Space: O(1)</span
+                >
+              </div>
+
+              <p id="infoDescription">
+                Bubble Sort compares nearby values. Bigger values slowly move
+                right, like bubbles rising to the top.
+              </p>
             </div>
 
-            <nav class="category-list">
-                <button class="category-btn" data-category="SORTING">SORTING</button>
-                <button class="category-btn" data-category="QUEUE">QUEUE</button>
-                <button class="category-btn" data-category="STACK">STACK</button>
-                <button class="category-btn" data-category="LINKED_LIST">LINKED LIST</button>
-                <button class="category-btn" data-category="BINARY_TREE">BINARY TREE</button>
-                <button class="category-btn" data-category="PATHFINDING">PATHFINDING</button>
-            </nav>
+            <div class="info-card">
+              <h3>Data / Grid Input</h3>
 
-            <div class="algorithm-pills" id="algorithmPills"></div>
-        </aside>
+              <label class="input-label" for="dataInput"
+                >Numbers separated by commas</label
+              >
+              <input
+                id="dataInput"
+                class="data-input"
+                type="text"
+                value="34, 12, 45, 8, 67, 23"
+              />
 
-        <main class="main-area">
-            <section class="hero-panel">
-                <div>
-                    <p class="eyebrow">Step-Based Algorithm Visualizer</p>
-                    <h2 id="algorithmTitle">Bubble Sort Recorder</h2>
-                    <p id="algorithmSubtitle">Compare nearby values, swap when needed, and watch the largest values move
-                        right.</p>
-                </div>
+              <div class="data-actions">
+                <button id="applyDataBtn" class="random-btn" type="button">
+                  Use My Data
+                </button>
+                <button
+                  id="randomBtn"
+                  class="random-btn secondary"
+                  type="button"
+                >
+                  Random
+                </button>
+              </div>
 
-                <div class="step-counter" id="stepCounter">Step 00 / 00</div>
-            </section>
+              <div class="grid-tools" id="gridTools">
+                <button
+                  class="grid-tool active"
+                  type="button"
+                  data-mode="start"
+                >
+                  START
+                </button>
+                <button class="grid-tool" type="button" data-mode="end">
+                  END
+                </button>
+                <button class="grid-tool" type="button" data-mode="wall">
+                  WALL
+                </button>
+                <button class="grid-tool" type="button" data-mode="erase">
+                  ERASE
+                </button>
+              </div>
 
-            <section class="studio-grid">
-                <div class="canvas-card">
-                    <canvas id="algorithmCanvas" width="900" height="440"></canvas>
+              <div class="data-pills" id="dataPills"></div>
+              <p class="input-error" id="inputError"></p>
+            </div>
+          </aside>
+        </section>
 
-                    <div class="control-bar">
-                        <button id="playBtn" class="control-btn">▶ Play</button>
-                        <button id="pauseBtn" class="control-btn">⏸ Pause</button>
-                        <button id="stepBackBtn" class="control-btn">⏪ Back</button>
-                        <button id="stepForwardBtn" class="control-btn">⏩ Next</button>
-                        <button id="resetBtn" class="control-btn danger">↺ Reset</button>
-
-                        <label class="speed-control">
-                            Speed
-                            <select id="speedSelect">
-                                <option value="slow">Slow</option>
-                                <option value="medium" selected>Medium</option>
-                                <option value="fast">Fast</option>
-                            </select>
-                        </label>
-                    </div>
-                </div>
-
-                <aside class="info-column">
-                    <div class="info-card">
-                        <h3>Algorithm Info</h3>
-
-                        <div class="info-row">
-                            <span>Name</span>
-                            <strong id="infoName">Bubble Sort</strong>
-                        </div>
-
-                        <div class="badge-row">
-                            <span class="complexity-badge time" id="timeComplexity">Time: O(n²)</span>
-                            <span class="complexity-badge space" id="spaceComplexity">Space: O(1)</span>
-                        </div>
-
-                        <p id="infoDescription">Bubble Sort compares nearby values. Bigger values slowly move right,
-                            like bubbles rising to the top.</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Data / Grid Input</h3>
-
-                        <label class="input-label" for="dataInput">Numbers separated by commas</label>
-                        <input id="dataInput" class="data-input" type="text" value="34, 12, 45, 8, 67, 23" />
-
-                        <div class="data-actions">
-                            <button id="applyDataBtn" class="random-btn">Use My Data</button>
-                            <button id="randomBtn" class="random-btn secondary">Random</button>
-                        </div>
-
-                        <div class="grid-tools" id="gridTools">
-                            <button class="grid-tool active" data-mode="start">START</button>
-                            <button class="grid-tool" data-mode="end">END</button>
-                            <button class="grid-tool" data-mode="wall">WALL</button>
-                            <button class="grid-tool" data-mode="erase">ERASE</button>
-                        </div>
-
-                        <div class="data-pills" id="dataPills"></div>
-                        <p class="input-error" id="inputError"></p>
-                    </div>
-                </aside>
-            </section>
-
-            <section class="explanation-panel">
-                <h3>Current Step</h3>
-                <p id="explanationText">Generate data or press play to begin.</p>
-            </section>
-        </main>
+        <section class="explanation-panel">
+          <h3>Current Step</h3>
+          <p id="explanationText">Generate data or press play to begin.</p>
+        </section>
+      </main>
     </div>
 
     <script src="algo-script.js"></script>
-</body>
-
+  </body>
 </html>
