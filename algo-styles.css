@@ -35,7 +35,7 @@ body {
     ),
     var(--bg);
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 button,
