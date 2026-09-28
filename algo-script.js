@@ -42,74 +42,74 @@ const COLORS = {
 
   text: "#f4f7fb",
   muted: "#8c90aa",
-  grid: "#1e1e35"
+  grid: "#1e1e35",
 };
 
 const SPEEDS = {
   slow: 1000,
   medium: 200,
-  fast: 50
+  fast: 50,
 };
 
 const CATEGORY_ALGORITHMS = {
   SORTING: [
     { label: "Bubble Sort", value: "bubbleSort" },
     { label: "Selection Sort", value: "selectionSort" },
-    { label: "Insertion Sort", value: "insertionSort" }
+    { label: "Insertion Sort", value: "insertionSort" },
   ],
-  QUEUE: [
-    { label: "Circular Queue", value: "circularQueue" }
-  ],
-  STACK: [
-    { label: "Stack Push / Pop", value: "stackPushPop" }
-  ],
-  LINKED_LIST: [
-    { label: "Linked List Demo", value: "linkedListDemo" }
-  ],
+  QUEUE: [{ label: "Circular Queue", value: "circularQueue" }],
+  STACK: [{ label: "Stack Push / Pop", value: "stackPushPop" }],
+  LINKED_LIST: [{ label: "Linked List Demo", value: "linkedListDemo" }],
   BINARY_TREE: [
     { label: "BST Insert", value: "bstInsert" },
     { label: "BST Search", value: "bstSearch" },
     { label: "In-order", value: "inOrderTraversal" },
     { label: "Pre-order", value: "preOrderTraversal" },
-    { label: "Post-order", value: "postOrderTraversal" }
+    { label: "Post-order", value: "postOrderTraversal" },
   ],
-  PATHFINDING: [
-    { label: "BFS Grid", value: "bfsGrid" }
-  ]
+  PATHFINDING: [{ label: "BFS Grid", value: "bfsGrid" }],
 };
 
 const ALGORITHM_INFO = {
   bubbleSort: {
     name: "Bubble Sort",
     title: "Bubble Sort Recorder",
-    subtitle: "Compare nearby values, swap when needed, and watch the largest values move right.",
+    subtitle:
+      "Compare nearby values, swap when needed, and watch the largest values move right.",
     time: "Time: O(n^2)",
     space: "Space: O(1)",
-    description: "Bubble Sort compares nearby values. Bigger values slowly move right, like bubbles rising to the top."
+    description:
+      "Bubble Sort compares nearby values. Bigger values slowly move right, like bubbles rising to the top.",
   },
   selectionSort: {
     name: "Selection Sort",
     title: "Selection Sort Scanner",
-    subtitle: "Scan the unsorted area, find the smallest value, then place it in the correct position.",
+    subtitle:
+      "Scan the unsorted area, find the smallest value, then place it in the correct position.",
     time: "Time: O(n^2)",
     space: "Space: O(1)",
-    description: "Selection Sort repeatedly searches for the smallest value. It then swaps that value into the next sorted position."
+    description:
+      "Selection Sort repeatedly searches for the smallest value. It then swaps that value into the next sorted position.",
   },
   insertionSort: {
     name: "Insertion Sort",
     title: "Insertion Sort Builder",
-    subtitle: "Take one value at a time and insert it into the already sorted left side.",
+    subtitle:
+      "Take one value at a time and insert it into the already sorted left side.",
     time: "Time: O(n^2)",
     space: "Space: O(1)",
-    description: "Insertion Sort builds a sorted section from left to right. Each new value shifts bigger values until it fits."
+    description:
+      "Insertion Sort builds a sorted section from left to right. Each new value shifts bigger values until it fits.",
   },
   circularQueue: {
     name: "Circular Queue",
     title: "Circular Queue Simulator",
-    subtitle: "Watch front and rear pointers move through a fixed-size queue and wrap around.",
+    subtitle:
+      "Watch front and rear pointers move through a fixed-size queue and wrap around.",
     time: "Time: O(1)",
     space: "Space: O(n)",
-    description: "A circular queue uses a fixed-size array. Rear wraps back to the start when it reaches the end, so empty spaces can be reused."
+    description:
+      "A circular queue uses a fixed-size array. Rear wraps back to the start when it reaches the end, so empty spaces can be reused.",
   },
   stackPushPop: {
     name: "Stack Push / Pop",
@@ -117,31 +117,38 @@ const ALGORITHM_INFO = {
     subtitle: "Watch values enter and leave from the top of a vertical stack.",
     time: "Time: O(1)",
     space: "Space: O(n)",
-    description: "A stack follows Last In, First Out. The newest value added to the top is always the first value removed."
+    description:
+      "A stack follows Last In, First Out. The newest value added to the top is always the first value removed.",
   },
   linkedListDemo: {
     name: "Linked List Demo",
     title: "Linked List Pointer Visualizer",
-    subtitle: "Watch nodes connect through arrows while insert, search, and delete operations run.",
+    subtitle:
+      "Watch nodes connect through arrows while insert, search, and delete operations run.",
     time: "Time: O(n)",
     space: "Space: O(n)",
-    description: "A linked list stores values in separate nodes. Each node points to the next node instead of sitting beside it in an array."
+    description:
+      "A linked list stores values in separate nodes. Each node points to the next node instead of sitting beside it in an array.",
   },
   bstInsert: {
     name: "BST Insert",
     title: "Binary Search Tree Insert",
-    subtitle: "Watch values move left or right until they find the correct empty position.",
+    subtitle:
+      "Watch values move left or right until they find the correct empty position.",
     time: "Time: O(log n) avg",
     space: "Space: O(n)",
-    description: "A Binary Search Tree places smaller values on the left and larger values on the right. Insert follows comparisons until it finds an empty spot."
+    description:
+      "A Binary Search Tree places smaller values on the left and larger values on the right. Insert follows comparisons until it finds an empty spot.",
   },
   bstSearch: {
     name: "BST Search",
     title: "Binary Search Tree Search",
-    subtitle: "Search moves left or right based on comparison with the current node.",
+    subtitle:
+      "Search moves left or right based on comparison with the current node.",
     time: "Time: O(log n) avg",
     space: "Space: O(1)",
-    description: "BST search skips large parts of the tree by comparing values. If the target is smaller, go left; if larger, go right."
+    description:
+      "BST search skips large parts of the tree by comparing values. If the target is smaller, go left; if larger, go right.",
   },
   inOrderTraversal: {
     name: "In-order Traversal",
@@ -149,7 +156,8 @@ const ALGORITHM_INFO = {
     subtitle: "Visit left subtree, then root, then right subtree.",
     time: "Time: O(n)",
     space: "Space: O(h)",
-    description: "In-order traversal visits BST values in sorted order. It uses recursion to fully visit the left side before the current node."
+    description:
+      "In-order traversal visits BST values in sorted order. It uses recursion to fully visit the left side before the current node.",
   },
   preOrderTraversal: {
     name: "Pre-order Traversal",
@@ -157,7 +165,8 @@ const ALGORITHM_INFO = {
     subtitle: "Visit root first, then left subtree, then right subtree.",
     time: "Time: O(n)",
     space: "Space: O(h)",
-    description: "Pre-order traversal is useful when you want to process the current node before its children. It visits root, left, then right."
+    description:
+      "Pre-order traversal is useful when you want to process the current node before its children. It visits root, left, then right.",
   },
   postOrderTraversal: {
     name: "Post-order Traversal",
@@ -165,7 +174,8 @@ const ALGORITHM_INFO = {
     subtitle: "Visit left subtree, then right subtree, then root.",
     time: "Time: O(n)",
     space: "Space: O(h)",
-    description: "Post-order traversal processes children before the parent. It is commonly used when deleting or evaluating trees."
+    description:
+      "Post-order traversal processes children before the parent. It is commonly used when deleting or evaluating trees.",
   },
   bfsGrid: {
     name: "BFS Grid Pathfinding",
@@ -173,8 +183,9 @@ const ALGORITHM_INFO = {
     subtitle: "Explore cells level by level until the shortest path is found.",
     time: "Time: O(V + E)",
     space: "Space: O(V)",
-    description: "BFS uses a queue to explore nearby cells first. On an unweighted grid, it finds the shortest path from start to end."
-  }
+    description:
+      "BFS uses a queue to explore nearby cells first. On an unweighted grid, it finds the shortest path from start to end.",
+  },
 };
 
 const appState = {
@@ -185,7 +196,7 @@ const appState = {
   currentStep: 0,
   isPlaying: false,
   speed: "medium",
-  playInterval: null
+  playInterval: null,
 };
 
 const gridState = {
@@ -194,7 +205,7 @@ const gridState = {
   startIndex: 17,
   endIndex: 142,
   walls: [35, 36, 37, 53, 69, 85, 101, 102, 103, 104],
-  editMode: "start"
+  editMode: "start",
 };
 
 const canvas = document.getElementById("algorithmCanvas");
@@ -233,9 +244,12 @@ function generateSteps(algorithm, data) {
   if (algorithm === "linkedListDemo") return generateLinkedListSteps(data);
   if (algorithm === "bstInsert") return generateBstInsertSteps(data);
   if (algorithm === "bstSearch") return generateBstSearchSteps(data);
-  if (algorithm === "inOrderTraversal") return generateTreeTraversalSteps(data, "inOrder");
-  if (algorithm === "preOrderTraversal") return generateTreeTraversalSteps(data, "preOrder");
-  if (algorithm === "postOrderTraversal") return generateTreeTraversalSteps(data, "postOrder");
+  if (algorithm === "inOrderTraversal")
+    return generateTreeTraversalSteps(data, "inOrder");
+  if (algorithm === "preOrderTraversal")
+    return generateTreeTraversalSteps(data, "preOrder");
+  if (algorithm === "postOrderTraversal")
+    return generateTreeTraversalSteps(data, "postOrder");
   if (algorithm === "bfsGrid") return generateBfsSteps();
 
   return [];
@@ -247,30 +261,89 @@ function generateBubbleSortSteps(data) {
   const workingData = [...data];
   const sortedIndexes = [];
 
-  recordedSteps.push(createBarStep(workingData, [], [], [], null, null, [], "Starting Bubble Sort."));
+  recordedSteps.push(
+    createBarStep(
+      workingData,
+      [],
+      [],
+      [],
+      null,
+      null,
+      [],
+      "Starting Bubble Sort.",
+    ),
+  );
 
   for (let passIndex = 0; passIndex < workingData.length - 1; passIndex++) {
-    for (let compareIndex = 0; compareIndex < workingData.length - passIndex - 1; compareIndex++) {
+    for (
+      let compareIndex = 0;
+      compareIndex < workingData.length - passIndex - 1;
+      compareIndex++
+    ) {
       const leftValue = workingData[compareIndex];
       const rightValue = workingData[compareIndex + 1];
 
-      recordedSteps.push(createBarStep(workingData, [compareIndex, compareIndex + 1], [], sortedIndexes, null, null, [], `Comparing ${leftValue} and ${rightValue}.`));
+      recordedSteps.push(
+        createBarStep(
+          workingData,
+          [compareIndex, compareIndex + 1],
+          [],
+          sortedIndexes,
+          null,
+          null,
+          [],
+          `Comparing ${leftValue} and ${rightValue}.`,
+        ),
+      );
 
       if (leftValue > rightValue) {
         workingData[compareIndex] = rightValue;
         workingData[compareIndex + 1] = leftValue;
 
-        recordedSteps.push(createBarStep(workingData, [], [compareIndex, compareIndex + 1], sortedIndexes, null, null, [], `${leftValue} is greater than ${rightValue}, so we swap them.`));
+        recordedSteps.push(
+          createBarStep(
+            workingData,
+            [],
+            [compareIndex, compareIndex + 1],
+            sortedIndexes,
+            null,
+            null,
+            [],
+            `${leftValue} is greater than ${rightValue}, so we swap them.`,
+          ),
+        );
       }
     }
 
     const sortedIndex = workingData.length - 1 - passIndex;
     sortedIndexes.push(sortedIndex);
-    recordedSteps.push(createBarStep(workingData, [], [], sortedIndexes, null, null, [], `${workingData[sortedIndex]} is locked into position.`));
+    recordedSteps.push(
+      createBarStep(
+        workingData,
+        [],
+        [],
+        sortedIndexes,
+        null,
+        null,
+        [],
+        `${workingData[sortedIndex]} is locked into position.`,
+      ),
+    );
   }
 
   sortedIndexes.push(0);
-  recordedSteps.push(createBarStep(workingData, [], [], sortedIndexes, null, null, [], "Bubble Sort is complete."));
+  recordedSteps.push(
+    createBarStep(
+      workingData,
+      [],
+      [],
+      sortedIndexes,
+      null,
+      null,
+      [],
+      "Bubble Sort is complete.",
+    ),
+  );
 
   return recordedSteps;
 }
@@ -281,19 +354,67 @@ function generateSelectionSortSteps(data) {
   const workingData = [...data];
   const sortedIndexes = [];
 
-  recordedSteps.push(createBarStep(workingData, [], [], [], null, null, [], "Starting Selection Sort."));
+  recordedSteps.push(
+    createBarStep(
+      workingData,
+      [],
+      [],
+      [],
+      null,
+      null,
+      [],
+      "Starting Selection Sort.",
+    ),
+  );
 
   for (let startIndex = 0; startIndex < workingData.length - 1; startIndex++) {
     let minimumIndex = startIndex;
 
-    recordedSteps.push(createBarStep(workingData, [], [], sortedIndexes, minimumIndex, startIndex, [], `Assume ${workingData[minimumIndex]} is the smallest value.`));
+    recordedSteps.push(
+      createBarStep(
+        workingData,
+        [],
+        [],
+        sortedIndexes,
+        minimumIndex,
+        startIndex,
+        [],
+        `Assume ${workingData[minimumIndex]} is the smallest value.`,
+      ),
+    );
 
-    for (let scanIndex = startIndex + 1; scanIndex < workingData.length; scanIndex++) {
-      recordedSteps.push(createBarStep(workingData, [minimumIndex, scanIndex], [], sortedIndexes, minimumIndex, scanIndex, [], `Comparing ${workingData[minimumIndex]} with ${workingData[scanIndex]}.`));
+    for (
+      let scanIndex = startIndex + 1;
+      scanIndex < workingData.length;
+      scanIndex++
+    ) {
+      recordedSteps.push(
+        createBarStep(
+          workingData,
+          [minimumIndex, scanIndex],
+          [],
+          sortedIndexes,
+          minimumIndex,
+          scanIndex,
+          [],
+          `Comparing ${workingData[minimumIndex]} with ${workingData[scanIndex]}.`,
+        ),
+      );
 
       if (workingData[scanIndex] < workingData[minimumIndex]) {
         minimumIndex = scanIndex;
-        recordedSteps.push(createBarStep(workingData, [], [], sortedIndexes, minimumIndex, scanIndex, [], `${workingData[minimumIndex]} is the new smallest value.`));
+        recordedSteps.push(
+          createBarStep(
+            workingData,
+            [],
+            [],
+            sortedIndexes,
+            minimumIndex,
+            scanIndex,
+            [],
+            `${workingData[minimumIndex]} is the new smallest value.`,
+          ),
+        );
       }
     }
 
@@ -301,14 +422,47 @@ function generateSelectionSortSteps(data) {
     workingData[startIndex] = workingData[minimumIndex];
     workingData[minimumIndex] = temp;
 
-    recordedSteps.push(createBarStep(workingData, [], [startIndex, minimumIndex], sortedIndexes, null, null, [], "Swap the smallest value into the sorted position."));
+    recordedSteps.push(
+      createBarStep(
+        workingData,
+        [],
+        [startIndex, minimumIndex],
+        sortedIndexes,
+        null,
+        null,
+        [],
+        "Swap the smallest value into the sorted position.",
+      ),
+    );
 
     sortedIndexes.push(startIndex);
-    recordedSteps.push(createBarStep(workingData, [], [], sortedIndexes, null, null, [], `${workingData[startIndex]} is now sorted.`));
+    recordedSteps.push(
+      createBarStep(
+        workingData,
+        [],
+        [],
+        sortedIndexes,
+        null,
+        null,
+        [],
+        `${workingData[startIndex]} is now sorted.`,
+      ),
+    );
   }
 
   sortedIndexes.push(workingData.length - 1);
-  recordedSteps.push(createBarStep(workingData, [], [], sortedIndexes, null, null, [], "Selection Sort is complete."));
+  recordedSteps.push(
+    createBarStep(
+      workingData,
+      [],
+      [],
+      sortedIndexes,
+      null,
+      null,
+      [],
+      "Selection Sort is complete.",
+    ),
+  );
 
   return recordedSteps;
 }
@@ -318,16 +472,53 @@ function generateInsertionSortSteps(data) {
   const recordedSteps = [];
   const workingData = [...data];
 
-  recordedSteps.push(createBarStep(workingData, [], [], [0], null, 0, [], "Starting Insertion Sort."));
+  recordedSteps.push(
+    createBarStep(
+      workingData,
+      [],
+      [],
+      [0],
+      null,
+      0,
+      [],
+      "Starting Insertion Sort.",
+    ),
+  );
 
-  for (let currentIndex = 1; currentIndex < workingData.length; currentIndex++) {
+  for (
+    let currentIndex = 1;
+    currentIndex < workingData.length;
+    currentIndex++
+  ) {
     const currentValue = workingData[currentIndex];
     let compareIndex = currentIndex - 1;
 
-    recordedSteps.push(createBarStep(workingData, [], [], getRangeIndexes(0, currentIndex - 1), null, currentIndex, [], `Pick up ${currentValue}.`));
+    recordedSteps.push(
+      createBarStep(
+        workingData,
+        [],
+        [],
+        getRangeIndexes(0, currentIndex - 1),
+        null,
+        currentIndex,
+        [],
+        `Pick up ${currentValue}.`,
+      ),
+    );
 
     while (compareIndex >= 0 && workingData[compareIndex] > currentValue) {
-      recordedSteps.push(createBarStep(workingData, [compareIndex, compareIndex + 1], [], getRangeIndexes(0, currentIndex - 1), null, compareIndex + 1, [compareIndex], `${workingData[compareIndex]} shifts right.`));
+      recordedSteps.push(
+        createBarStep(
+          workingData,
+          [compareIndex, compareIndex + 1],
+          [],
+          getRangeIndexes(0, currentIndex - 1),
+          null,
+          compareIndex + 1,
+          [compareIndex],
+          `${workingData[compareIndex]} shifts right.`,
+        ),
+      );
 
       workingData[compareIndex + 1] = workingData[compareIndex];
       compareIndex--;
@@ -335,16 +526,47 @@ function generateInsertionSortSteps(data) {
 
     workingData[compareIndex + 1] = currentValue;
 
-    recordedSteps.push(createBarStep(workingData, [], [compareIndex + 1], getRangeIndexes(0, currentIndex), null, compareIndex + 1, [], `${currentValue} is inserted into place.`));
+    recordedSteps.push(
+      createBarStep(
+        workingData,
+        [],
+        [compareIndex + 1],
+        getRangeIndexes(0, currentIndex),
+        null,
+        compareIndex + 1,
+        [],
+        `${currentValue} is inserted into place.`,
+      ),
+    );
   }
 
-  recordedSteps.push(createBarStep(workingData, [], [], getRangeIndexes(0, workingData.length - 1), null, null, [], "Insertion Sort is complete."));
+  recordedSteps.push(
+    createBarStep(
+      workingData,
+      [],
+      [],
+      getRangeIndexes(0, workingData.length - 1),
+      null,
+      null,
+      [],
+      "Insertion Sort is complete.",
+    ),
+  );
 
   return recordedSteps;
 }
 
 /* Creates one reusable sorting snapshot object. */
-function createBarStep(array, comparing, swapping, sortedIndexes, minimumIndex, currentIndex, shifting, explanation) {
+function createBarStep(
+  array,
+  comparing,
+  swapping,
+  sortedIndexes,
+  minimumIndex,
+  currentIndex,
+  shifting,
+  explanation,
+) {
   return {
     type: "bars",
     array: [...array],
@@ -354,7 +576,7 @@ function createBarStep(array, comparing, swapping, sortedIndexes, minimumIndex, 
     minimumIndex,
     currentIndex,
     shifting: [...shifting],
-    explanation
+    explanation,
   };
 }
 
@@ -367,7 +589,17 @@ function generateCircularQueueSteps(data) {
   let rear = -1;
   let size = 0;
 
-  recordedSteps.push(createQueueStep(queue, front, rear, null, null, null, "Starting Circular Queue."));
+  recordedSteps.push(
+    createQueueStep(
+      queue,
+      front,
+      rear,
+      null,
+      null,
+      null,
+      "Starting Circular Queue.",
+    ),
+  );
 
   for (let index = 0; index < Math.min(data.length, capacity); index++) {
     if (size === 0) {
@@ -380,19 +612,49 @@ function generateCircularQueueSteps(data) {
     queue[rear] = data[index];
     size++;
 
-    recordedSteps.push(createQueueStep(queue, front, rear, rear, null, rear === 0 && size > 1 ? rear : null, `Enqueue ${data[index]} at the rear.`));
+    recordedSteps.push(
+      createQueueStep(
+        queue,
+        front,
+        rear,
+        rear,
+        null,
+        rear === 0 && size > 1 ? rear : null,
+        `Enqueue ${data[index]} at the rear.`,
+      ),
+    );
   }
 
   for (let count = 0; count < 2; count++) {
     const removedValue = queue[front];
 
-    recordedSteps.push(createQueueStep(queue, front, rear, null, front, null, `Dequeue ${removedValue} from the front.`));
+    recordedSteps.push(
+      createQueueStep(
+        queue,
+        front,
+        rear,
+        null,
+        front,
+        null,
+        `Dequeue ${removedValue} from the front.`,
+      ),
+    );
 
     queue[front] = null;
     size--;
     front = size === 0 ? -1 : (front + 1) % capacity;
 
-    recordedSteps.push(createQueueStep(queue, front, rear, front, null, null, "Front moves to the next item."));
+    recordedSteps.push(
+      createQueueStep(
+        queue,
+        front,
+        rear,
+        front,
+        null,
+        null,
+        "Front moves to the next item.",
+      ),
+    );
   }
 
   const extraValues = [77, 88];
@@ -401,16 +663,44 @@ function generateCircularQueueSteps(data) {
     rear = (rear + 1) % capacity;
     queue[rear] = extraValues[index];
 
-    recordedSteps.push(createQueueStep(queue, front, rear, rear, null, rear === 0 ? rear : null, `Enqueue ${extraValues[index]}. Rear may wrap around.`));
+    recordedSteps.push(
+      createQueueStep(
+        queue,
+        front,
+        rear,
+        rear,
+        null,
+        rear === 0 ? rear : null,
+        `Enqueue ${extraValues[index]}. Rear may wrap around.`,
+      ),
+    );
   }
 
-  recordedSteps.push(createQueueStep(queue, front, rear, null, null, null, "Circular Queue demo complete."));
+  recordedSteps.push(
+    createQueueStep(
+      queue,
+      front,
+      rear,
+      null,
+      null,
+      null,
+      "Circular Queue demo complete.",
+    ),
+  );
 
   return recordedSteps;
 }
 
 /* Creates one reusable queue snapshot object. */
-function createQueueStep(queue, front, rear, activeIndex, removeIndex, wrapIndex, explanation) {
+function createQueueStep(
+  queue,
+  front,
+  rear,
+  activeIndex,
+  removeIndex,
+  wrapIndex,
+  explanation,
+) {
   return {
     type: "queue",
     queue: [...queue],
@@ -419,7 +709,7 @@ function createQueueStep(queue, front, rear, activeIndex, removeIndex, wrapIndex
     activeIndex,
     removeIndex,
     wrapIndex,
-    explanation
+    explanation,
   };
 }
 
@@ -429,31 +719,78 @@ function generateStackSteps(data) {
   const stack = [];
   const recordedSteps = [];
 
-  recordedSteps.push(createStackStep(stack, capacity, null, null, "", "Starting Stack."));
+  recordedSteps.push(
+    createStackStep(stack, capacity, null, null, "", "Starting Stack."),
+  );
 
   for (let index = 0; index < Math.min(data.length, capacity); index++) {
     stack.push(data[index]);
-    recordedSteps.push(createStackStep(stack, capacity, stack.length - 1, null, "", `Push ${data[index]} on top.`));
+    recordedSteps.push(
+      createStackStep(
+        stack,
+        capacity,
+        stack.length - 1,
+        null,
+        "",
+        `Push ${data[index]} on top.`,
+      ),
+    );
   }
 
-  recordedSteps.push(createStackStep(stack, capacity, null, null, "Stack overflow warning: capacity is full.", "The stack is full."));
+  recordedSteps.push(
+    createStackStep(
+      stack,
+      capacity,
+      null,
+      null,
+      "Stack overflow warning: capacity is full.",
+      "The stack is full.",
+    ),
+  );
 
   for (let count = 0; count < 2; count++) {
     const topIndex = stack.length - 1;
     const removedValue = stack[topIndex];
 
-    recordedSteps.push(createStackStep(stack, capacity, null, topIndex, "", `Pop ${removedValue} from the top.`));
+    recordedSteps.push(
+      createStackStep(
+        stack,
+        capacity,
+        null,
+        topIndex,
+        "",
+        `Pop ${removedValue} from the top.`,
+      ),
+    );
     stack.pop();
-    recordedSteps.push(createStackStep(stack, capacity, stack.length - 1, null, "", "The top pointer moves down."));
+    recordedSteps.push(
+      createStackStep(
+        stack,
+        capacity,
+        stack.length - 1,
+        null,
+        "",
+        "The top pointer moves down.",
+      ),
+    );
   }
 
-  recordedSteps.push(createStackStep(stack, capacity, null, null, "", "Stack demo complete."));
+  recordedSteps.push(
+    createStackStep(stack, capacity, null, null, "", "Stack demo complete."),
+  );
 
   return recordedSteps;
 }
 
 /* Creates one reusable stack snapshot object. */
-function createStackStep(stack, capacity, activeIndex, removeIndex, warning, explanation) {
+function createStackStep(
+  stack,
+  capacity,
+  activeIndex,
+  removeIndex,
+  warning,
+  explanation,
+) {
   return {
     type: "stack",
     stack: [...stack],
@@ -461,7 +798,7 @@ function createStackStep(stack, capacity, activeIndex, removeIndex, warning, exp
     activeIndex,
     removeIndex,
     warning,
-    explanation
+    explanation,
   };
 }
 
@@ -470,32 +807,80 @@ function generateLinkedListSteps(data) {
   const recordedSteps = [];
   let nodes = [];
 
-  recordedSteps.push(createLinkedListStep(nodes, null, null, null, "Starting Linked List. Head is null because the list is empty."));
+  recordedSteps.push(
+    createLinkedListStep(
+      nodes,
+      null,
+      null,
+      null,
+      "Starting Linked List. Head is null because the list is empty.",
+    ),
+  );
 
   const headValue = data[0] ?? 34;
   nodes.unshift({ id: createNodeId(), value: headValue });
 
-  recordedSteps.push(createLinkedListStep(nodes, 0, 0, null, `Insert ${headValue} at head. The new node becomes the first node.`));
+  recordedSteps.push(
+    createLinkedListStep(
+      nodes,
+      0,
+      0,
+      null,
+      `Insert ${headValue} at head. The new node becomes the first node.`,
+    ),
+  );
 
   const tailValues = data.slice(1, 5);
 
   for (let index = 0; index < tailValues.length; index++) {
     const newValue = tailValues[index];
 
-    recordedSteps.push(createLinkedListStep(nodes, nodes.length - 1, null, null, `Move to the current tail node ${nodes[nodes.length - 1].value}.`));
+    recordedSteps.push(
+      createLinkedListStep(
+        nodes,
+        nodes.length - 1,
+        null,
+        null,
+        `Move to the current tail node ${nodes[nodes.length - 1].value}.`,
+      ),
+    );
 
     nodes.push({ id: createNodeId(), value: newValue });
 
-    recordedSteps.push(createLinkedListStep(nodes, nodes.length - 1, nodes.length - 1, null, `Insert ${newValue} at tail. The previous tail now points to this new node.`));
+    recordedSteps.push(
+      createLinkedListStep(
+        nodes,
+        nodes.length - 1,
+        nodes.length - 1,
+        null,
+        `Insert ${newValue} at tail. The previous tail now points to this new node.`,
+      ),
+    );
   }
 
   const searchValue = nodes[Math.min(2, nodes.length - 1)].value;
 
   for (let index = 0; index < nodes.length; index++) {
-    recordedSteps.push(createLinkedListStep(nodes, index, null, null, `Searching for ${searchValue}. Visiting node with value ${nodes[index].value}.`));
+    recordedSteps.push(
+      createLinkedListStep(
+        nodes,
+        index,
+        null,
+        null,
+        `Searching for ${searchValue}. Visiting node with value ${nodes[index].value}.`,
+      ),
+    );
 
     if (nodes[index].value === searchValue) {
-      recordedSteps.push(createLinkedListStep(nodes, index, null, null, `Found ${searchValue}. Search stops here.`));
+      recordedSteps.push(
+        createLinkedListStep(
+          nodes,
+          index,
+          null,
+          null,
+          `Found ${searchValue}. Search stops here.`,
+        ),
+      );
       break;
     }
   }
@@ -503,26 +888,50 @@ function generateLinkedListSteps(data) {
   const deleteIndex = Math.min(2, nodes.length - 1);
   const deletedValue = nodes[deleteIndex].value;
 
-  recordedSteps.push(createLinkedListStep(nodes, deleteIndex, null, deleteIndex, `Delete node ${deletedValue}. First we highlight the node that will be removed.`));
+  recordedSteps.push(
+    createLinkedListStep(
+      nodes,
+      deleteIndex,
+      null,
+      deleteIndex,
+      `Delete node ${deletedValue}. First we highlight the node that will be removed.`,
+    ),
+  );
 
   nodes.splice(deleteIndex, 1);
 
-  recordedSteps.push(createLinkedListStep(nodes, deleteIndex < nodes.length ? deleteIndex : nodes.length - 1, null, null, `${deletedValue} is removed. The previous node now points to the next node.`));
+  recordedSteps.push(
+    createLinkedListStep(
+      nodes,
+      deleteIndex < nodes.length ? deleteIndex : nodes.length - 1,
+      null,
+      null,
+      `${deletedValue} is removed. The previous node now points to the next node.`,
+    ),
+  );
 
-  recordedSteps.push(createLinkedListStep(nodes, null, null, null, "Linked List demo complete."));
+  recordedSteps.push(
+    createLinkedListStep(nodes, null, null, null, "Linked List demo complete."),
+  );
 
   return recordedSteps;
 }
 
 /* Creates one linked list snapshot object. */
-function createLinkedListStep(nodes, visitIndex, newIndex, deleteIndex, explanation) {
+function createLinkedListStep(
+  nodes,
+  visitIndex,
+  newIndex,
+  deleteIndex,
+  explanation,
+) {
   return {
     type: "linkedList",
-    nodes: nodes.map(node => ({ ...node })),
+    nodes: nodes.map((node) => ({ ...node })),
     visitIndex,
     newIndex,
     deleteIndex,
-    explanation
+    explanation,
   };
 }
 
@@ -537,13 +946,29 @@ function generateBstInsertSteps(data) {
   const treeData = { root: null };
   const recordedSteps = [];
 
-  recordedSteps.push(createTreeStep(null, [], null, null, "Starting BST insert. The tree is empty."));
+  recordedSteps.push(
+    createTreeStep(
+      null,
+      [],
+      null,
+      null,
+      "Starting BST insert. The tree is empty.",
+    ),
+  );
 
   for (let index = 0; index < values.length; index++) {
     insertTreeValue(treeData, values[index], recordedSteps);
   }
 
-  recordedSteps.push(createTreeStep(treeData.root, [], null, null, "BST insert demo complete. Smaller values went left, larger values went right."));
+  recordedSteps.push(
+    createTreeStep(
+      treeData.root,
+      [],
+      null,
+      null,
+      "BST insert demo complete. Smaller values went left, larger values went right.",
+    ),
+  );
 
   return recordedSteps;
 }
@@ -552,7 +977,15 @@ function generateBstInsertSteps(data) {
 function insertTreeValue(treeData, value, recordedSteps) {
   if (!treeData.root) {
     treeData.root = createTreeNode(value);
-    recordedSteps.push(createTreeStep(treeData.root, [], treeData.root.id, null, `${value} becomes the root node.`));
+    recordedSteps.push(
+      createTreeStep(
+        treeData.root,
+        [],
+        treeData.root.id,
+        null,
+        `${value} becomes the root node.`,
+      ),
+    );
     return;
   }
 
@@ -562,12 +995,28 @@ function insertTreeValue(treeData, value, recordedSteps) {
   while (currentNode) {
     pathIds.push(currentNode.id);
 
-    recordedSteps.push(createTreeStep(treeData.root, [...pathIds], null, null, `Compare ${value} with ${currentNode.value}.`));
+    recordedSteps.push(
+      createTreeStep(
+        treeData.root,
+        [...pathIds],
+        null,
+        null,
+        `Compare ${value} with ${currentNode.value}.`,
+      ),
+    );
 
     if (value < currentNode.value) {
       if (!currentNode.left) {
         currentNode.left = createTreeNode(value);
-        recordedSteps.push(createTreeStep(treeData.root, [...pathIds], currentNode.left.id, null, `${value} is smaller, so it is inserted on the left.`));
+        recordedSteps.push(
+          createTreeStep(
+            treeData.root,
+            [...pathIds],
+            currentNode.left.id,
+            null,
+            `${value} is smaller, so it is inserted on the left.`,
+          ),
+        );
         return;
       }
 
@@ -575,7 +1024,15 @@ function insertTreeValue(treeData, value, recordedSteps) {
     } else {
       if (!currentNode.right) {
         currentNode.right = createTreeNode(value);
-        recordedSteps.push(createTreeStep(treeData.root, [...pathIds], currentNode.right.id, null, `${value} is larger or equal, so it is inserted on the right.`));
+        recordedSteps.push(
+          createTreeStep(
+            treeData.root,
+            [...pathIds],
+            currentNode.right.id,
+            null,
+            `${value} is larger or equal, so it is inserted on the right.`,
+          ),
+        );
         return;
       }
 
@@ -598,15 +1055,39 @@ function generateBstSearchSteps(data) {
   let currentNode = treeData.root;
   const pathIds = [];
 
-  recordedSteps.push(createTreeStep(treeData.root, [], null, null, `Starting BST search for ${targetValue}.`));
+  recordedSteps.push(
+    createTreeStep(
+      treeData.root,
+      [],
+      null,
+      null,
+      `Starting BST search for ${targetValue}.`,
+    ),
+  );
 
   while (currentNode) {
     pathIds.push(currentNode.id);
 
-    recordedSteps.push(createTreeStep(treeData.root, [...pathIds], null, null, `Visiting ${currentNode.value}. Compare it with ${targetValue}.`));
+    recordedSteps.push(
+      createTreeStep(
+        treeData.root,
+        [...pathIds],
+        null,
+        null,
+        `Visiting ${currentNode.value}. Compare it with ${targetValue}.`,
+      ),
+    );
 
     if (currentNode.value === targetValue) {
-      recordedSteps.push(createTreeStep(treeData.root, [...pathIds], null, currentNode.id, `Found ${targetValue}. Search complete.`));
+      recordedSteps.push(
+        createTreeStep(
+          treeData.root,
+          [...pathIds],
+          null,
+          currentNode.id,
+          `Found ${targetValue}. Search complete.`,
+        ),
+      );
       return recordedSteps;
     }
 
@@ -617,7 +1098,15 @@ function generateBstSearchSteps(data) {
     }
   }
 
-  recordedSteps.push(createTreeStep(treeData.root, pathIds, null, null, `${targetValue} was not found.`));
+  recordedSteps.push(
+    createTreeStep(
+      treeData.root,
+      pathIds,
+      null,
+      null,
+      `${targetValue} was not found.`,
+    ),
+  );
   return recordedSteps;
 }
 
@@ -632,11 +1121,33 @@ function generateTreeTraversalSteps(data, traversalType) {
     insertTreeValueWithoutSteps(treeData, values[index]);
   }
 
-  recordedSteps.push(createTreeStep(treeData.root, [], null, null, `Starting ${traversalType} traversal.`));
+  recordedSteps.push(
+    createTreeStep(
+      treeData.root,
+      [],
+      null,
+      null,
+      `Starting ${traversalType} traversal.`,
+    ),
+  );
 
-  traverseTree(treeData.root, traversalType, visitedIds, recordedSteps, treeData.root);
+  traverseTree(
+    treeData.root,
+    traversalType,
+    visitedIds,
+    recordedSteps,
+    treeData.root,
+  );
 
-  recordedSteps.push(createTreeStep(treeData.root, visitedIds, null, null, `${traversalType} traversal complete.`));
+  recordedSteps.push(
+    createTreeStep(
+      treeData.root,
+      visitedIds,
+      null,
+      null,
+      `${traversalType} traversal complete.`,
+    ),
+  );
 
   return recordedSteps;
 }
@@ -647,21 +1158,45 @@ function traverseTree(node, traversalType, visitedIds, recordedSteps, root) {
 
   if (traversalType === "preOrder") {
     visitedIds.push(node.id);
-    recordedSteps.push(createTreeStep(root, [...visitedIds], null, node.id, `Visit ${node.value} first, then move to its children.`));
+    recordedSteps.push(
+      createTreeStep(
+        root,
+        [...visitedIds],
+        null,
+        node.id,
+        `Visit ${node.value} first, then move to its children.`,
+      ),
+    );
   }
 
   traverseTree(node.left, traversalType, visitedIds, recordedSteps, root);
 
   if (traversalType === "inOrder") {
     visitedIds.push(node.id);
-    recordedSteps.push(createTreeStep(root, [...visitedIds], null, node.id, `Visit ${node.value} after its left subtree.`));
+    recordedSteps.push(
+      createTreeStep(
+        root,
+        [...visitedIds],
+        null,
+        node.id,
+        `Visit ${node.value} after its left subtree.`,
+      ),
+    );
   }
 
   traverseTree(node.right, traversalType, visitedIds, recordedSteps, root);
 
   if (traversalType === "postOrder") {
     visitedIds.push(node.id);
-    recordedSteps.push(createTreeStep(root, [...visitedIds], null, node.id, `Visit ${node.value} after both children.`));
+    recordedSteps.push(
+      createTreeStep(
+        root,
+        [...visitedIds],
+        null,
+        node.id,
+        `Visit ${node.value} after both children.`,
+      ),
+    );
   }
 }
 
@@ -699,7 +1234,7 @@ function createTreeNode(value) {
     id: `tree-${Date.now()}-${Math.random()}`,
     value,
     left: null,
-    right: null
+    right: null,
   };
 }
 
@@ -711,7 +1246,7 @@ function createTreeStep(root, visitedIds, newNodeId, foundNodeId, explanation) {
     visitedIds: [...visitedIds],
     newNodeId,
     foundNodeId,
-    explanation
+    explanation,
   };
 }
 
@@ -723,7 +1258,7 @@ function cloneTree(node) {
     id: node.id,
     value: node.value,
     left: cloneTree(node.left),
-    right: cloneTree(node.right)
+    right: cloneTree(node.right),
   };
 }
 
@@ -738,17 +1273,38 @@ function generateBfsSteps() {
 
   visited[gridState.startIndex] = true;
 
-  recordedSteps.push(createGridStep([], [], gridState.startIndex, "Starting BFS. The start cell enters the queue first."));
+  recordedSteps.push(
+    createGridStep(
+      [],
+      [],
+      gridState.startIndex,
+      "Starting BFS. The start cell enters the queue first.",
+    ),
+  );
 
   while (queue.length > 0) {
     const currentIndex = queue.shift();
     explored.push(currentIndex);
 
-    recordedSteps.push(createGridStep([...explored], [], currentIndex, `Exploring cell ${currentIndex}. BFS checks its neighbours.`));
+    recordedSteps.push(
+      createGridStep(
+        [...explored],
+        [],
+        currentIndex,
+        `Exploring cell ${currentIndex}. BFS checks its neighbours.`,
+      ),
+    );
 
     if (currentIndex === gridState.endIndex) {
       const path = reconstructPath(parent, gridState.endIndex);
-      recordedSteps.push(createGridStep([...explored], path, currentIndex, "End found. Now we reconstruct the shortest path using parent links."));
+      recordedSteps.push(
+        createGridStep(
+          [...explored],
+          path,
+          currentIndex,
+          "End found. Now we reconstruct the shortest path using parent links.",
+        ),
+      );
       return recordedSteps;
     }
 
@@ -757,17 +1313,34 @@ function generateBfsSteps() {
     for (let index = 0; index < neighbours.length; index++) {
       const neighbourIndex = neighbours[index];
 
-      if (!visited[neighbourIndex] && !gridState.walls.includes(neighbourIndex)) {
+      if (
+        !visited[neighbourIndex] &&
+        !gridState.walls.includes(neighbourIndex)
+      ) {
         visited[neighbourIndex] = true;
         parent[neighbourIndex] = currentIndex;
         queue.push(neighbourIndex);
 
-        recordedSteps.push(createGridStep([...explored, neighbourIndex], [], neighbourIndex, `Cell ${neighbourIndex} is added to the queue. Its parent is cell ${currentIndex}.`));
+        recordedSteps.push(
+          createGridStep(
+            [...explored, neighbourIndex],
+            [],
+            neighbourIndex,
+            `Cell ${neighbourIndex} is added to the queue. Its parent is cell ${currentIndex}.`,
+          ),
+        );
       }
     }
   }
 
-  recordedSteps.push(createGridStep([...explored], [], null, "No path found. The queue became empty before reaching the end."));
+  recordedSteps.push(
+    createGridStep(
+      [...explored],
+      [],
+      null,
+      "No path found. The queue became empty before reaching the end.",
+    ),
+  );
   return recordedSteps;
 }
 
@@ -783,7 +1356,7 @@ function createGridStep(explored, path, currentIndex, explanation) {
     explored: [...explored],
     path: [...path],
     currentIndex,
-    explanation
+    explanation,
   };
 }
 
@@ -797,14 +1370,19 @@ function getGridNeighbours(index) {
     { row: -1, col: 0 },
     { row: 1, col: 0 },
     { row: 0, col: -1 },
-    { row: 0, col: 1 }
+    { row: 0, col: 1 },
   ];
 
   for (let i = 0; i < directions.length; i++) {
     const nextRow = row + directions[i].row;
     const nextCol = col + directions[i].col;
 
-    if (nextRow >= 0 && nextRow < gridState.rows && nextCol >= 0 && nextCol < gridState.cols) {
+    if (
+      nextRow >= 0 &&
+      nextRow < gridState.rows &&
+      nextCol >= 0 &&
+      nextCol < gridState.cols
+    ) {
       neighbours.push(nextRow * gridState.cols + nextCol);
     }
   }
@@ -848,7 +1426,7 @@ function renderStep(step) {
     renderDataPills(step.stack);
   } else if (step.type === "linkedList") {
     drawLinkedList(step);
-    renderDataPills(step.nodes.map(node => node.value));
+    renderDataPills(step.nodes.map((node) => node.value));
   } else if (step.type === "tree") {
     drawTree(step);
     renderDataPills(flattenTreeValues(step.root));
@@ -896,7 +1474,10 @@ function pause() {
 
 /* Moves one recorded step forward. */
 function stepForward() {
-  appState.currentStep = Math.min(appState.currentStep + 1, appState.steps.length - 1);
+  appState.currentStep = Math.min(
+    appState.currentStep + 1,
+    appState.steps.length - 1,
+  );
   renderStep(appState.steps[appState.currentStep]);
 }
 
@@ -966,7 +1547,8 @@ function applyCustomData() {
   }
 
   if (parsedNumbers.length > 12) {
-    inputError.textContent = "Use 12 numbers or fewer so the Canvas stays readable.";
+    inputError.textContent =
+      "Use 12 numbers or fewer so the Canvas stays readable.";
     return;
   }
 
@@ -1072,7 +1654,8 @@ function drawQueue(step) {
 
   const boxSize = 92;
   const gap = 18;
-  const totalWidth = step.queue.length * boxSize + (step.queue.length - 1) * gap;
+  const totalWidth =
+    step.queue.length * boxSize + (step.queue.length - 1) * gap;
   const startX = (CANVAS_WIDTH - totalWidth) / 2;
   const boxY = 170;
 
@@ -1089,20 +1672,55 @@ function drawQueue(step) {
     ctx.fillStyle = COLORS.text;
     ctx.font = "700 18px JetBrains Mono";
     ctx.textAlign = "center";
-    ctx.fillText(step.queue[index] === null ? "EMPTY" : step.queue[index], x + boxSize / 2, boxY + 54);
+    ctx.fillText(
+      step.queue[index] === null ? "EMPTY" : step.queue[index],
+      x + boxSize / 2,
+      boxY + 54,
+    );
   }
 
-  drawQueuePointer("front", step.front, startX, boxY, boxSize, gap, COLORS.gridStart, -55);
-  drawQueuePointer("rear", step.rear, startX, boxY, boxSize, gap, COLORS.minimum, 145);
+  drawQueuePointer(
+    "front",
+    step.front,
+    startX,
+    boxY,
+    boxSize,
+    gap,
+    COLORS.gridStart,
+    -55,
+  );
+  drawQueuePointer(
+    "rear",
+    step.rear,
+    startX,
+    boxY,
+    boxSize,
+    gap,
+    COLORS.minimum,
+    145,
+  );
 }
 
 /* Draws a queue pointer label. */
-function drawQueuePointer(label, pointerIndex, startX, boxY, boxSize, gap, color, offsetY) {
+function drawQueuePointer(
+  label,
+  pointerIndex,
+  startX,
+  boxY,
+  boxSize,
+  gap,
+  color,
+  offsetY,
+) {
   if (pointerIndex === -1) {
     ctx.fillStyle = color;
     ctx.font = "700 16px JetBrains Mono";
     ctx.textAlign = "center";
-    ctx.fillText(`${label}: -1`, CANVAS_WIDTH / 2, label === "front" ? 85 : 340);
+    ctx.fillText(
+      `${label}: -1`,
+      CANVAS_WIDTH / 2,
+      label === "front" ? 85 : 340,
+    );
     return;
   }
 
@@ -1186,7 +1804,8 @@ function drawLinkedList(step) {
   const nodeWidth = 92;
   const nodeHeight = 62;
   const gap = 55;
-  const totalWidth = step.nodes.length * nodeWidth + (step.nodes.length - 1) * gap;
+  const totalWidth =
+    step.nodes.length * nodeWidth + (step.nodes.length - 1) * gap;
   const startX = Math.max(40, (CANVAS_WIDTH - totalWidth) / 2);
   const y = 190;
 
@@ -1217,7 +1836,11 @@ function drawLinkedList(step) {
   ctx.fillStyle = COLORS.muted;
   ctx.font = "700 18px JetBrains Mono";
   ctx.textAlign = "left";
-  ctx.fillText("null", startX + step.nodes.length * (nodeWidth + gap) - gap + 22, y + 38);
+  ctx.fillText(
+    "null",
+    startX + step.nodes.length * (nodeWidth + gap) - gap + 22,
+    y + 38,
+  );
 }
 
 /* Draws the binary tree edges first, then nodes on top. */
@@ -1261,13 +1884,37 @@ function drawTree(step) {
 }
 
 /* Recursively calculates x/y positions for every tree node. */
-function calculateTreePositions(node, x, y, horizontalGap, positionedNodes, parentX = null, parentY = null) {
+function calculateTreePositions(
+  node,
+  x,
+  y,
+  horizontalGap,
+  positionedNodes,
+  parentX = null,
+  parentY = null,
+) {
   if (!node) return;
 
   positionedNodes.push({ node, x, y, parentX, parentY });
 
-  calculateTreePositions(node.left, x - horizontalGap, y + 90, horizontalGap / 2, positionedNodes, x, y);
-  calculateTreePositions(node.right, x + horizontalGap, y + 90, horizontalGap / 2, positionedNodes, x, y);
+  calculateTreePositions(
+    node.left,
+    x - horizontalGap,
+    y + 90,
+    horizontalGap / 2,
+    positionedNodes,
+    x,
+    y,
+  );
+  calculateTreePositions(
+    node.right,
+    x + horizontalGap,
+    y + 90,
+    horizontalGap / 2,
+    positionedNodes,
+    x,
+    y,
+  );
 }
 
 /* Draws one circular tree node. */
@@ -1362,30 +2009,35 @@ function handleCanvasClick(event) {
   const col = Math.floor((mouseX - startX) / (cellSize + gap));
   const row = Math.floor((mouseY - startY) / (cellSize + gap));
 
-  if (row < 0 || row >= gridState.rows || col < 0 || col >= gridState.cols) return;
+  if (row < 0 || row >= gridState.rows || col < 0 || col >= gridState.cols)
+    return;
 
   const index = row * gridState.cols + col;
 
   if (gridState.editMode === "start") {
     gridState.startIndex = index;
-    gridState.walls = gridState.walls.filter(wall => wall !== index);
+    gridState.walls = gridState.walls.filter((wall) => wall !== index);
   }
 
   if (gridState.editMode === "end") {
     gridState.endIndex = index;
-    gridState.walls = gridState.walls.filter(wall => wall !== index);
+    gridState.walls = gridState.walls.filter((wall) => wall !== index);
   }
 
-  if (gridState.editMode === "wall" && index !== gridState.startIndex && index !== gridState.endIndex) {
+  if (
+    gridState.editMode === "wall" &&
+    index !== gridState.startIndex &&
+    index !== gridState.endIndex
+  ) {
     if (gridState.walls.includes(index)) {
-      gridState.walls = gridState.walls.filter(wall => wall !== index);
+      gridState.walls = gridState.walls.filter((wall) => wall !== index);
     } else {
       gridState.walls.push(index);
     }
   }
 
   if (gridState.editMode === "erase") {
-    gridState.walls = gridState.walls.filter(wall => wall !== index);
+    gridState.walls = gridState.walls.filter((wall) => wall !== index);
   }
 
   loadAlgorithm("PATHFINDING", "bfsGrid");
